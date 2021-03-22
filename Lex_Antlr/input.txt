@@ -1,0 +1,15 @@
+program "prgramName"
+
+
+  var a2, b : int;
+  
+begin
+  read(a2);
+  read(b);
+  
+  a2 := 1 + 2 * 3 / b
+  
+ 
+  write (b);
+end;
+end.

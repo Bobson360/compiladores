@@ -4,26 +4,27 @@ package main;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
-import parser.IsiLangLexer;
-import parser.IsiLangParser;
+import parser.MiniPascalLexer;
+import parser.MiniPascalParser;
+
 
 
 public class Main {
 	
 	public static void main(String[] args) {
 		try {
-			IsiLangLexer lexer;
-			IsiLangParser parser;
+			MiniPascalLexer lexer;
+			MiniPascalParser parser;
 			
-			lexer = new IsiLangLexer(CharStreams.fromFileName("input.isi"));
+			lexer = new MiniPascalLexer(CharStreams.fromFileName("input.txt"));
 			
 			CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 			
-			parser = new IsiLangParser(tokenStream);
+			parser = new MiniPascalParser(tokenStream);
 			
 			System.out.println("Compilation sucssesfull");
 			
-			parser.prog();
+			parser.program();
 		} catch (Exception e) {
 			System.out.println("ERROR " + e.getMessage());
 		}
